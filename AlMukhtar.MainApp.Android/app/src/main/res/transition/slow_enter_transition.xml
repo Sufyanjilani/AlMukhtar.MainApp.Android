@@ -1,0 +1,9 @@
+<!-- slow_enter_transition.xml -->
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1000"
+    android:interpolator="@android:interpolator/decelerate_quint">
+    <!-- Add any custom animations for the enter transition -->
+<changeBounds />
+<fade />
+    </transitionSet>
+

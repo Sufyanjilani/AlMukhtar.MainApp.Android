@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".UI.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:singleSelection="true"
+            android:id="@+id/chipgroup">
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/latestchip"
+                android:backgroundTint="@color/panel_color"
+                android:checkable="true"
+                android:text="@string/latest"/>
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/allchip"
+                android:checkable="true"
+                android:backgroundTint="@color/panel_color"
+                android:text="@string/all"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/searchchip"
+                android:backgroundTint="@color/panel_color"
+                android:checkable="true"
+                android:text="@string/search"/>
+
+
+
+        </com.google.android.material.chip.ChipGroup>
+
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="1dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="left"
+            android:src="@drawable/baseline_settings_24"/>
+
+
+
+    </LinearLayout>
+
+  <androidx.cardview.widget.CardView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/searchviewcard"
+      android:visibility="gone"
+      app:cardUseCompatPadding="true"
+      app:cardCornerRadius="14dp"
+      android:animateLayoutChanges="true"
+      app:cardElevation="14dp">
+
+      <androidx.appcompat.widget.SearchView
+          android:layout_width="match_parent"
+          android:layout_height="40dp"
+          android:background="@color/panel_color"
+          app:queryHint="@string/search"
+          android:id="@+id/search"/>
+  </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:text="Latest"
+        android:id="@+id/txtheading"
+        android:textSize="25dp"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/row" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/miniPlayer"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="-2dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:id="@+id/playingFileimage"
+                android:transitionName="image"
+                android:src="@drawable/cardbackground"/>
+            <View
+                android:layout_width="50dp"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/playingfileName"
+                android:transitionName="playingfileName"
+                android:text="@string/app_name"/>
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="1dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/btnPlayPause"
+                android:src="@drawable/baseline_play_arrow_24"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/close"
+                android:src="@drawable/baseline_close_24"/>
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+
